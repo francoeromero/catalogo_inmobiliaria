@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Header</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #c0bdbd;
+      /* border: 2px solid red; */
+    }
+
+    /* Initial Header Styles */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 5rem;
+      z-index: 1000;
+      background: transparent;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .navbar.scrolled {
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      color: rgb(255, 87, 51);
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+      font-size: 3rem;
+    }
+
+    .navbar.scrolled .navbar-brand {
+      color: rgb(255, 87, 51);
+    }
+
+    .nav-link {
+      color: white;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .nav-link:hover {
+      color: rgb(255, 87, 51);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: rgb(255, 87, 51);
+      transition: width 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .navbar.scrolled .nav-link {
+      color: black;
+      font-size: 0.9rem;
+    }
+    .scrolled_logo {
+      font-size: 2rem;
+    }
+
+    .navbar.scrolled .nav-link:hover {
+      color: rgb(255, 87, 51);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 0.5rem 1rem;
+      }
+
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .nav-link {
+        color: black;
+      }
+
+      .nav-link:hover {
+        color: rgb(255, 87, 51);
+      }
+
+      .nav-link::after {
+        background-color: rgb(255, 87, 51);
+      }
+    }
+
+
+
+
+
+
+
+    .our-company-section{
+      top: 3rem;
+      margin: 2rem;
+      position: relative;
+      text-align: center;
+      color: white;
+      background: url(./img/nuestra_empresa.jpg)no-repeat center center/cover;
+      background-size: cover; 
+      height: 40vh;
+      border-radius: 1rem;
+      overflow: hidden; 
+      /* animation: zoomInOut 20s infinite;  */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .our-company-section:hover{
+      filter: brightness(.9);
+    }
+    a.our-company-section  {
+      text-decoration: none !important;
+      
+    }
+
+    /* Section "Qué estás buscando" */
+    .search-section {
+      
+      top: 3rem;
+      margin: 2rem;
+      position: relative;
+      text-align: center;
+      color: white;
+      background: url(./img/portada.jpg)no-repeat center center/cover;
+      background-size: cover; 
+      height: 60vh;
+      border-radius: 1rem;
+      overflow: hidden; 
+      animation: zoomInOut 20s infinite; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    @keyframes zoomInOut {
+      0%, 100% {
+        background-size: 100%; 
+      }
+      50% {
+        background-size: 110%; 
+      }
+    }
+    .search-section h1 {
+      position: relative;
+      z-index: 2;
+      color: #ffffff;
+    }
+
+    button-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      border: 2px solid red;
+      gap: 1rem; /* Espaciado entre los botones */
+      margin-top: 1rem;
+    }
+
+.custom-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Espaciado entre el ícono y el texto */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #444;
+  background-color: #f5f5f5;
+  border: 2px solid #dcdcdc;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.custom-btn i {
+  font-size: 1.2rem;
+}
+
+.custom-btn:hover {
+  background-color: #ff6600; /* Color naranja en hover */
+  color: white; /* Cambiar color del texto a blanco */
+  border-color: #ff6600; /* Borde del mismo color del fondo */
+}
+
+ 
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Residencial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Comercial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Permutas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inversiones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tasaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="search-section" style="display: flex; align-items: center; justify-content: center;">
+  <h1>¿Qué estás buscando?</h1>
+  <div class="button-container" style="display: flex; flex-direction: row !important;">
+    <button class="custom-btn">
+      <i class="bi bi-house-door-fill"></i> PROPIEDADES
+    </button>
+    <button class="custom-btn">
+      <i class="bi bi-arrow-repeat"></i> PERMUTAS
+    </button>
+    <button class="custom-btn">
+      <i class="bi bi-building"></i> INVERSIONES
+    </button>
+  </div>
+</section>
+
+<a href="#"class="our-company-section" style="display: flex; align-items: center; justify-content: center;">
+  <h1>Nuestra empresa</h1>
+  <i class="bi bi-arrow-right" style="position: absolute; bottom: 10px; right: 20px; font-size: 3.5rem; color: white;"></i>
+</a>
+<a href="#"class="our-company-section" style="display: flex; align-items: center; justify-content: center; background: url(./img/cafe.jpg)no-repeat center center/cover !important;">
+  <h1>Café</h1>
+  <i class="bi bi-arrow-right" style="position: absolute; bottom: 10px; right: 20px; font-size: 3.5rem; color: white;"></i>
+</a>
+
+<div style="height: 2000px; padding-top: 100px;">
+  <h1 class="text-center">Contenido de prueba</h1>
+</div>
+
+<script>
+  // Change navbar style on scroll
+  const navbar = document.querySelector('.navbar');
+  const logo = document.querySelector('.navbar-brand')
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+      logo.classList.add('scrolled_logo');
+    } else {
+      navbar.classList.remove('scrolled');
+      logo.classList.remove('scrolled_logo')
+    }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
