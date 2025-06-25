@@ -1,0 +1,937 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud de imagenes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+      <!-- end fonts -->
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Quicksand", sans-serif;
+        }
+        /* body {
+            font-family: Arial, sans-serif;
+            background:rgb(197, 197, 197);
+        } */
+        :root{
+          --color-primario: rgb(235, 53, 7);
+          --color-secundario: rgb(230, 69, 29);
+          --color-terciario: rgb(252, 75, 52);
+          --color-transparente: rgba(209, 58, 12, 0.5);
+          --color-claro:rgb(253, 80, 68);
+          --color-intermedio: rgb(253, 80, 68);
+          --color-oscuro:rgba(209, 58, 12, 1);
+          }
+       
+        
+/* ///////////////////////////////////////////////////////////////// */
+.navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 5rem;
+      z-index: 1000;
+      background: transparent;
+      transition: all 0.3s ease-in-out;
+      z-index: 9999999999999999999999999999999999999999999999999999;
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-brand {
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    font-size: 3rem;
+    }
+    
+    .navbar.scrolled .navbar-brand {
+      z-index: 9999999999999999999999999999999999999999999999999999;
+      }
+
+      .nav-link {
+      color: gray;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      }
+
+    .nav-link:hover {
+    color: var(--color-primario);
+
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-primario);
+      transition: width 0.3s ease-in-out;
+
+      }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.4); /* blanco con transparencia */
+    backdrop-filter: blur(10px); /* efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* soporte para Safari */
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* sutil sombra opcional */
+    }
+
+    .navbar.scrolled .nav-link {
+    color: rgb(48, 48, 48) !important;
+    font-size: 0.9rem;
+    }
+    .scrolled_logo {
+      font-size: 2rem;
+    }
+
+    .navbar.scrolled .nav-link:hover {
+    color: var(--color-primario);
+    }
+    .container-fluid{
+    border-bottom:3px solid rgb(224, 55, 4);
+    }
+/* ///////////////////////////////////////////////////////////////// */
+        /* .botonPpalHeader{
+        border-radius:20px;
+        
+        background: -webkit-linear-gradient(to left, #fcb045, #fd1d1d, #fcb045);  
+        background: linear-gradient(to left, #fcb045, #fd1d1d, #fcb045); 
+        border:none;
+        box-shadow:7px 7px 7px rgba(0,0,0,0.4);
+    } */
+    .logo-wp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 999;
+    height: 5rem;
+    width:5rem;
+    background: #1b9748;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    margin: 1rem;
+    }
+    .logo-wp::after{
+    content: '';
+    position: absolute;
+    height: 0rem;
+    width:0rem;
+    background: var(--color-primario);
+    border-radius: 50%;
+    }
+
+    .grid-publicaciones {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      padding: 2rem;
+      }
+      .logo-wp img{
+      z-index: 99999;
+      }
+
+      .buscador2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px 20px;
+      backdrop-filter: blur(6px);
+      width: 100%;
+      margin-top:10rem;
+      
+      bottom: 30rem;
+      /* z-index: 999999; */
+      }
+
+    .logo-wp img{
+      z-index: 99999;
+    }
+
+    .logo-wp:hover::after {
+      width: 5rem;
+      height: 5rem;
+      transition: .7s;
+    }
+        .carousel-container {
+            width: 100vw;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 120vw;
+        }
+        section.card {
+        flex: 0 0 calc(100% / 6);
+        background-color: #a7978d;
+        border-radius: 10px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 10px 14px 10px rgba(0, 0, 0, 0.4); 
+
+        }
+        .tipologia{
+            margin-top: 1rem;
+            
+        }
+        .imgDegrade{
+        overflow: hidden;
+        border-radius:10px;
+        }
+        .imgDegrade::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 10px;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to top, var(--color-transparente), rgba(0, 0, 0, 0));
+          pointer-events: none; /* Deja que el <a> siga siendo clickeable */
+          }
+
+          section.card a {
+          display: block;
+          position: relative; 
+          width: 100%; 
+          }
+          section.card a img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          }
+
+        .iconosCard{
+            display: flex; 
+            flex-direction: row; 
+            align-items: center; 
+            justify-content: center;
+        }
+        .imgCardPpal{
+            
+            height: 25rem !important;
+            width: 100% !important;
+            object-fit: cover;
+            display: block;
+        }
+        .logoMob {
+    position: absolute;
+    z-index: 99;
+    height: 14rem !important;
+    width: 100% !important;
+    left: 50%;
+    top: 0; /* o ajustá según necesites */
+    transform: translateX(-50%) scale(0.3); /* centrar y escalar */
+    margin-top: -4rem;
+    display: block;
+    
+}
+      .contacto{
+            color: black;
+            position: absolute;
+            z-index: 99;
+            width: 20rem;
+            right: 10;
+            bottom: 0;
+            margin-left: 1rem;
+            margin-top: 1rem;
+            font-size:1.5rem;
+            
+        }
+        .imgCardPpal{
+
+        height: 25rem !important;
+        width: 100% !important;
+        object-fit: cover;
+
+        display: block;
+        transition: transform 0.5s ease; /* transicion suave */
+        }
+        .imgCardPpal:hover{
+          transform: scale(1.2);
+          }
+        section.buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            position: relative;
+        }
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background-color: #333;
+            color: white;
+        }
+        .contacto{
+            color: black;
+            position: absolute;
+            z-index: 999999;
+            width: 10rem;
+            right: 0;
+            margin-left: 1rem;
+            margin-top: 1rem;
+            font-size:1.5rem;
+        }
+        .descripcion{
+            height:3rem;
+        }
+        .botonVer{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 20px;
+        /* background: linear-gradient(270deg, var(--color-terciario)); */
+        background-color: var(--color-intermedio);
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        transition: background-color 0.6s ease;
+        width: 15rem !important;
+        margin-bottom:15rem ;
+        border: none;
+        }
+        .botonVer:hover {
+        background-color: var(--color-terciario);
+        /* background-position: right center ; */
+        }
+
+        .precio{
+            font-size: 2rem;
+        }
+
+
+        .btn-der, .btn-izq{
+            scale: 6;
+            background: none;
+            color: #ffffff;
+            margin: 1rem;
+            border-radius: 3px;
+            background: none;
+            height: 3.5rem;
+            width: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-150%);
+            position: absolute;
+            top: 50%;
+        }
+        .btn-der{
+            right: 0;
+            
+        }
+        .btn-der::before{
+            content: '';
+            position: absolute;
+            top: -7.5rem; /* Para centrar verticalmente el fondo de 15rem */
+            height: 15rem;
+            width: 100%;
+            z-index: -1; /* Detrás del botón */
+            pointer-events: none; /* Permite clics a través del pseudo-elemento */
+        }
+        .btn-der::before {
+        right: 0;
+        background: linear-gradient(to left, rgba(255,255,255,.2), rgba(255,255,255,0));
+        }
+        .btn-izq{
+            left: 0;
+        }
+        .btn-izq::before{
+            content: '';
+            position: absolute;
+            top: -7.5rem; /* Para centrar verticalmente el fondo de 15rem */
+            height: 15rem;
+            width: 100%;
+            z-index: -1; /* Detrás del botón */
+            pointer-events: none; /* Permite clics a través del pseudo-elemento */
+        }
+
+        .btn-izq::before {
+        left: 0;
+        background: linear-gradient(to right, rgba(255,255,255,.2), rgba(255,255,255,0));
+        }
+
+        /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+        .btnP {
+        background-color:rgb(255, 211, 129);
+        color: rgb(21, 21, 21);
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+        margin-right:1rem;
+        margin-left:1rem;
+        }
+        .btnP:hover {
+        background-color: #f5b95d;
+        }
+
+        .btnP.active {
+        background:#ffa500;
+        }
+        .our-company-section{
+      top: 3rem;
+      margin: 2rem;
+      position: relative;
+      text-align: center;
+      color: white;
+      background: url(./img/nuestra_empresa.jpg)no-repeat center center/cover;
+      background-size: cover; 
+      height: 40vh;
+      border-radius: 1rem;
+      overflow: hidden; 
+      /* animation: zoomInOut 20s infinite;  */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .our-company-section:hover {
+      filter: brightness(.9);
+    }
+    a.our-company-section  {
+      text-decoration: none !important;
+      
+    }
+    .our-company-section:hover i {
+      transform: scale(1.3); /* Agranda la flecha */
+      color: #ff6600; /* Cambia el color de la flecha */
+      transition: 0.5s;
+    }
+
+    /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  */
+    /*aaaaaaaaaaaaaaaBUSCADORaaaaaaaaaaaaaaaaaaaa  */
+    .buscador {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px 20px;
+      backdrop-filter: blur(6px);
+      width: 80rem;
+      border-radius:10px;
+      position:absolute;
+      bottom: 30rem;
+      z-index: 999999;
+    }
+    .botonPpalHeader {
+      border-radius: 20px;
+      padding: 10px 25px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      background: linear-gradient(270deg, var(--color-secundario), var(--color-terciario), var(--color-secundario));
+      background-size: 400% 400%;
+      border: none;
+      box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.4);
+      transition: background-position 0.5s ease;
+
+}
+
+.botonPpalHeader:hover {
+    background-position: right center; /* o 100% 50% para más efecto */
+}
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown select {
+      padding: 10px 15px;
+      font-size: 14px;
+      border: none;
+      background: transparent;
+      color: white;
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      border-bottom: 1px solid white;
+    }
+    .select {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
+  background-color:rgba(207, 207, 207, 0.2) !important;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  width: 200px;  /* Ajusta el ancho según tu necesidad */
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Cambio de color y borde al hacer hover o al enfocar el <select> */
+.select:focus {
+  border-color: #fcb045;
+  background-color: #e7f3ff;
+}
+
+/* Estilización de las opciones dentro del <select> */
+.select option {
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover en las opciones */
+.select option:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+    .dropdown select:focus {
+      outline: none;
+    }
+
+    .boton-buscar {
+      background:#ffad42;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+      width: 21rem;
+      display: flex;
+      align-items:center;
+      justify-content:center;
+      background:none;
+    }
+    #ubicacion, #propiedad,#operacion {
+    background: none;
+    color: white;
+    }
+
+    #ubicacion:focus, #propiedad:focus,#operacion:focus {
+    color: black;
+    }
+
+    .texto-btn {
+      display: flex;
+      align-items:center;
+      justify-content:center;
+      transition: opacity 0.3s ease;
+      width: 25rem;
+      text-align: center;
+    }
+
+    .texto-btn.fade-out {
+      opacity: 0;
+    }
+
+    .texto-btn.fade-in {
+      opacity: 1;
+    }
+    .subtitle{
+        font-size: 3rem;
+    }
+    /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  */
+
+        @media (max-width: 1200px) {
+            .grid-publicaciones {grid-template-columns: repeat(3, 1fr);}
+        }
+        @media (max-width: 1000px) {
+            .grid-publicaciones {grid-template-columns: repeat(2, 1fr);}
+        }
+        @media (max-width: 700px) {
+            .grid-publicaciones {grid-template-columns: repeat(1, 1fr);}
+        }
+
+    </style>
+
+</head>
+<body>
+<?php require "modelo/conexion.php"; require "controlador/registrar.php"; require "controlador/editar.php"; require "controlador/eliminar.php";$sql = $conexion->query("select * from img");include  "controlador/registrar.php";?>
+
+<nav class="navbar navbar-expand-lg navbar-light" style="z-index:999999;">
+  <div class="container-fluid" style=" background:rgba(255, 255, 255, 1); padding:20px;">
+    <a class="navbar-brand" href="#">
+        <img width="100" src="./img/logo_card2.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link fw-bold" href="./index.php">INICIO</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link fw-bold" href="#">VENTA</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link fw-bold" href="#">ALQUILER</a>
+        </li>
+        <!-- <li class="nav-item d-flex align-items-center">
+          <a class="nav-link fw-bold" href="./todasPublicaciones.php">Propiedades</a>
+        </li> -->
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link fw-bold" href="#nosotros">NOSOTROS</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link fw-bold" href="#contacto">CONTACTO</a>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a href="./todasPublicaciones.php" class="btn btn-primary fw-bold botonPpalHeader">VER PROPIEDADES</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- ------------------------------- -->
+
+<section style="  display:flex;align-items:center;justify-content: center;">
+    <section class="buscador2" style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center; gap: 0.5rem;">
+    <input type="checkbox" id="verTodas">
+    <label for="verTodas" style="font-weight: bold;">Ver todas las propiedades</label>
+</div>
+        <div class="dropdown" style="text-align: left;">
+            <label style="font-weight:bold; margin-right: 0.5rem;" for="operacion">Tipo de operación:</label>
+            <select class="select" id="operacion">
+                <option value="venta">Venta</option>
+                <option value="alquiler">Alquiler</option>
+            </select>
+        </div>
+
+        <div class="dropdown" style="text-align: left;">
+            <label style="font-weight:bold; margin-right: 0.5rem;" for="propiedad">Tipo de propiedad:</label>
+            <select class="select" id="propiedad">
+                <option value="departamento">Departamento</option>
+                <option value="casa">Casa</option>
+                <option value="local">Local</option>
+                <option value="terreno">Terreno</option>
+            </select>
+        </div>
+
+        <div class="dropdown" style="text-align: left;">
+            <label style="font-weight:bold; margin-right: 0.5rem;" for="ubicacion">Ubicación:</label>
+            <select class="select" id="ubicacion">
+                <option value="capital federal">Capital Federal</option>
+                <option value="zona sur">Zona Sur</option>
+                <option value="zona norte">Zona Norte</option>
+                <option value="zona oeste">Zona Oeste</option>
+            </select>
+        </div>
+
+        <button class="boton-buscar" id="btnBuscar" style="font-weight: bold;">
+            <span class="texto-btn" id="textoBtn">BUSCAR 🔍</span>
+        </button>
+    </section>
+
+</section>
+
+
+
+
+
+<div class="grid-publicaciones"><section class="card">
+        <a class="imgDegrade" href="./publicacion.php?id=363">
+          
+            <img class="logoMob" src="./img/logo_card.png">
+            <h2 class="contacto">11111111111</h2>
+        <img class="imgCardPpal" style="filter:grayscale(0.6);" src="./archivos/363.jpg">
+        </a>
+        <p class="tipologia">terreno</p>
+        <section class="iconosCard">
+            <section><img class="imgIconCard" src="./img/card_icon_1.png"><p>0 m2</p></section>
+            <section><img class="imgIconCard" src="./img/card_icon_2.png"><p>2</p></section>
+            <section><img class="imgIconCard" src="./img/card_icon_4.png"><p>1</p></section>
+            <section><img class="imgIconCard" src="./img/card_icon_5.png"><p>si</p></section>
+        </section>
+        <h2>CASA en zona norte</h2>
+        <h4 class="ubicacion">zona oeste</h4>
+        <p class="descripcion"></p>
+        <hr>
+        <h2 class="precio">USD 120000.00</h2>
+        <a href="./publicacion.php?id=363"  class="botonVer">Ver publicación</a>
+        <p class="clasificacion" style="display:none;">alquiler</p>
+        
+        <p class="idRegistro" style="display:none;">363</p>
+        </section>
+<section class="card">
+        <a class="imgDegrade" href="./publicacion.php?id=362">
+        <img class="logoMob" src="./img/logo_card.png">
+        <h2 class="contacto">11111111111</h2>
+        <img class="imgCardPpal" style="filter:grayscale(0.6);" src="./archivos/362.jpg">
+        </a>
+        <p class="tipologia">local</p>
+        <section class="iconosCard">
+            <section><img class="imgIconCard" src="./img/card_icon_1.png"><p>65 m2</p></section>
+            <section><img class="imgIconCard" src="./img/card_icon_2.png"><p>3</p></section>
+            <section><img class="imgIconCard" src="./img/card_icon_4.png"><p>1</p></section>
+            <section><img class="imgIconCard" src="./img/card_icon_5.png"><p>si</p></section>
+        </section>
+        <h2>Departamento en Lomas </h2>
+        <h4 class="ubicacion">zona oeste</h4>
+        <p class="descripcion">Departamento amoblado  </p>
+        <hr>
+        <h2 class="precio">USD 50000.00</h2>
+        <a href="./publicacion.php?id=362"  class="botonVer">Ver publicación</a>
+        <p class="clasificacion" style="display:none;">alquiler</p>
+        
+        <p class="idRegistro" style="display:none;">362</p>
+        </section>
+<section class="card">
+        <a class="imgDegrade" href="./publicacion.php?id=364">
+        <img class="logoMob" src="./img/logo_card.png">
+        <h2 class="contacto">11111111111</h2>
+        <img class="imgCardPpal" style="filter:grayscale(0.6);" src="./archivos/364.jpg">
+        </a>
+        <p class="tipologia">casa</p>
+        <section class="iconosCard">
+            <section><img class="imgIconCard" src="./img/card_icon_1.png"><p>300 m2</p></section>
+            <section><img class="imgIconCard" src="./img/card_icon_2.png"><p>4</p></section>
+            <section><img class="imgIconCard" src="./img/card_icon_4.png"><p>2</p></section>
+            <section><img class="imgIconCard" src="./img/card_icon_5.png"><p>si</p></section>
+        </section>
+        <h2>CASA</h2>
+        <h4 class="ubicacion">capital federal</h4>
+        <p class="descripcion">Se alquila casa de 300m2 con garage</p>
+        <hr>
+        <h2 class="precio">USD 3000.00</h2>
+        <a href="./publicacion.php?id=364"  class="botonVer">Ver publicación</a>
+        <p class="clasificacion" style="display:none;">alquiler</p>
+        
+        <p class="idRegistro" style="display:none;">364</p>
+        </section></div>
+
+<script>
+
+
+
+// ///////////////////////////
+const operacion1 = localStorage.getItem("operacion");
+const propiedad1 = localStorage.getItem("propiedad");
+const ubicacion1 = "zona " +localStorage.getItem("ubicacion");
+
+document.getElementById("operacion").value = operacion1;
+document.getElementById("propiedad").value = propiedad1;
+document.getElementById("ubicacion").value = ubicacion1;
+
+// ///////////////////////////
+const verTodasCheckbox = document.getElementById('verTodas');
+
+
+
+verTodasCheckbox.addEventListener('change', () => {
+    const cards = document.querySelectorAll('.card');
+    if (verTodasCheckbox.checked == true) {
+        cards.forEach(card => {
+            card.style.display = 'block';
+            
+        });
+    } else {
+        // Volver a aplicar filtros automáticamente cuando se desactiva "Ver todas"
+        selectOperacion.dispatchEvent(new Event('change'));
+        selectPropiedad.dispatchEvent(new Event('change'));
+        selectUbicacion.dispatchEvent(new Event('change'));
+    }
+
+    actualizarContador(); // Siempre actualizar el contador
+});
+
+// BUSCADOR ///////////////////////////
+const selectOperacion = document.getElementById('operacion');
+const selectPropiedad = document.getElementById('propiedad');
+const selectUbicacion = document.getElementById('ubicacion');
+const buscador = document.getElementById('textoBtn');
+
+
+// Al cargar la página, recuperamos la variable y seleccionamos el valor
+window.addEventListener("DOMContentLoaded", () => {
+    const operacionGuardada = localStorage.getItem("operacion");
+    if (operacionGuardada) {
+        selectOperacion.value = operacionGuardada.toLowerCase();
+
+        // Ejecutamos manualmente el evento 'change' para filtrar
+        const event = new Event('change');
+        selectOperacion.dispatchEvent(event);
+
+        // Si querés eliminarla para que no se repita al recargar
+        localStorage.removeItem("operacion");
+    }
+});
+
+selectOperacion.addEventListener('change', () => {
+    const valorOperacion = selectOperacion.value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        const operacion = card.querySelector('p[style*="display:none"]')?.textContent.trim().toLowerCase();
+
+        const coincideOperacion = operacion === valorOperacion;
+        // const coincidePropiedad = tipologia === valorPropiedad;
+        // const coincideUbicacion = ubicacion === valorUbicacion;
+
+        if (coincideOperacion) {
+            card.style.display = 'block';
+        }
+        else{
+            card.style.display = 'none';
+
+        }
+    });
+    actualizarContador();
+});
+
+selectPropiedad.addEventListener('change', () => {
+    
+    const valorPropiedad = selectPropiedad.value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        
+        const tipologia = card.querySelector('p.tipologia')?.textContent.trim().toLowerCase();
+
+        const coincidePropiedad = tipologia === valorPropiedad;
+
+        if (coincidePropiedad) {
+            card.style.display = 'block';
+        }
+        else{
+            card.style.display = 'none';
+
+        }
+    });
+    actualizarContador();
+});
+
+selectUbicacion.addEventListener('change', () => {
+    
+    
+    const valorUbicacion = selectUbicacion.value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        
+        const ubicacion = card.querySelector('h4.ubicacion')?.textContent.trim().toLowerCase();
+        
+        const coincideUbicacion = ubicacion === valorUbicacion;
+
+        if (coincideUbicacion) {
+            card.style.display = 'block';
+        }
+        else{
+            card.style.display = 'none';
+
+        }
+    });
+    actualizarContador();
+});
+
+// Ejecutar una vez al cargar la página
+selectOperacion.dispatchEvent(new Event('change'));
+selectPropiedad.dispatchEvent(new Event('change'));
+selectUbicacion.dispatchEvent(new Event('change'));
+
+// 👇 Esta función cuenta las cards visibles y actualiza el botón
+function actualizarContador() {
+    const cards = document.querySelectorAll('.card');
+    let contador = 0;
+
+    cards.forEach(card => {
+        if (card.style.display !== 'none') {
+            contador++;
+        }
+    });
+
+    buscador.textContent = `🔍 ${contador} PROPIEDADES ENCONTRADAS`;
+}
+
+
+// darle click a todas las propiedades se muestren
+verTodasCheckbox.click()
+// ///////////////////////////
+
+
+
+
+
+        // /////////////////////
+    // texto limitado 
+    const limiteCaracteres = 121; // Cantidad máxima que querés mostrar
+    const parrafos = document.querySelectorAll(".descripcion");
+
+    parrafos.forEach(parrafo => {
+        const textoOriginal = parrafo.innerText;
+        if (textoOriginal.length > limiteCaracteres) {
+            parrafo.innerText = textoOriginal.substring(0, limiteCaracteres) + "...";
+        }
+    });
+    // /////////////////////
+</script>
+
+<script>
+    
+  // Change navbar style on scroll
+  const navbar = document.querySelector('.navbar');
+  const logo = document.querySelector('.navbar-brand')
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+      logo.classList.add('scrolled_logo');
+    } else {
+      navbar.classList.remove('scrolled');
+      logo.classList.remove('scrolled_logo')
+    }
+  });
+
+  const title = document.getElementById("title");
+  const loader = document.getElementById("loader");
+  const background = document.getElementById("background");
+  
+  window.addEventListener("load", function() {
+      setTimeout(() => {
+        document.getElementById("loading-page").style.animation = "curtainClose 1s forwards";
+        setTimeout(() => {
+          document.getElementById("loading-page").style.display = "none";
+          
+        }, 1000);
+      }, 1500);
+    });
+</script>
+
+
+
+</body>
+
+</html>

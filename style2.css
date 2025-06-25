@@ -1,0 +1,76 @@
+
+.buscador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 20px;
+    backdrop-filter: blur(6px);
+    width: 100%;
+    
+    
+    bottom: 30rem;
+    /* z-index: 999999; */
+  }
+
+  .dropdown {
+    position: relative;
+    
+  }
+
+  .dropdown select {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    background: transparent;
+    color: white;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+  }
+
+  .dropdown select:focus {
+    outline: none;
+  }
+
+  .boton-buscar {
+    background:#ffad42;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    width: 20rem;
+  }
+  #ubicacion, #propiedad,#operacion {
+  background: none;
+  color: white;
+  }
+
+  #ubicacion:focus, #propiedad:focus,#operacion:focus {
+  color: black;
+  }
+
+  .texto-btn {
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+
+  .texto-btn.fade-out {
+    opacity: 0;
+    
+  }
+
+  .texto-btn.fade-in {
+    opacity: 1;
+    
+  }
+  .subtitle{
+      font-size: 3rem;
+  }
+  /*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  */
