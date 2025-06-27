@@ -76,7 +76,7 @@ const Footer = () => {
           >
             <Link to="/" className="flex items-center justify-center md:justify-start space-x-2 mb-4">
               <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center">
-                <img src="/img/logo_card.png" alt="Logo" className="w-12" />
+                <img src="https://github.com/francoeromero/catalogo_inmobiliaria/blob/main/img/logo_card.png?raw=true" alt="Logo" className="w-12" />
               </div>
             </Link>
             <p className="text-black/70 text-sm max-w-xs mx-auto md:mx-0">
