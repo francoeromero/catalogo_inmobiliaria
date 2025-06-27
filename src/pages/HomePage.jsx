@@ -97,7 +97,7 @@ const HomePage = () => {
     muted
     playsInline
   >
-    <source src="/video/clip.mp4" type="video/mp4" />
+    <source src="https://github.com/francoeromero/catalogo_inmobiliaria/raw/refs/heads/main/video/clip.mp4" type="video/mp4" />
     Tu navegador no soporta HTML5 video.
   </video>
 
