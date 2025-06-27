@@ -27,7 +27,7 @@ const Navbar = () => {
             <div style={{ width: '82px', height: '82px' }}  className=" bg-white-lg flex items-center justify-center">
               {/* icono */}
               {/* <Home className="w-5 h-5 text-white" />  */}
-              <img src="/img/logo_card.png" alt="Logo" className="w-19 h-15" />
+              <img src="https://github.com/francoeromero/catalogo_inmobiliaria/blob/main/img/logo_card.png?raw=true" alt="Logo" className="w-19 h-15" />
             </div>
             {/* <span className="text-lg md:text-xl font-bold text-gray-500">RC PROPIEDADES</span> */}
           </Link>
