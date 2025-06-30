@@ -176,7 +176,7 @@ const HomePage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl font-bold text-gray text-center mb-12">
+              <h2 className="text-3xl font-bold text-black/70 text-center mb-12">
                 Resultados de Búsqueda ({filteredProperties.length})
               </h2>
               
