@@ -50,7 +50,7 @@ const Footer = () => {
       
       {/* Franja superior con logo y texto */}
       <div className="bg-white/0 backdrop-blur-sm py-8 flex flex-col items-center justify-center">
-        <img src="https://github.com/francoeromero/catalogo_inmobiliaria/blob/main/img/4.png?raw=true" alt="DIC Logo" className="w-32 h-auto mb-2" />
+        <img src="https://github.com/francoeromero/catalogo_inmobiliaria/blob/main/img/3.png?raw=true" alt="DIC Logo" className="w-32 h-auto mb-2" />
         {/* <span className="text-sm tracking-widest text-gray-500 mb-4">PROPIEDADES</span> */}
 
         {/* Íconos de redes sociales */}
