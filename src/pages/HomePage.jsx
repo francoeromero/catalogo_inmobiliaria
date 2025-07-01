@@ -73,9 +73,9 @@ const HomePage = () => {
   };
 
   const stats = [
-    { icon: TrendingUp, label: 'Propiedades Vendidas', value: '500+' },
-    { icon: Award, label: 'Años de Experiencia', value: '15+' },
-    { icon: Users, label: 'Clientes Satisfechos', value: '1000+' }
+    { icon: TrendingUp, label: 'Propiedades Vendidas', value: '60+' },
+    { icon: Award, label: 'Años de Experiencia', value: '5+' },
+    { icon: Users, label: 'Clientes Satisfechos', value: '100+' }
   ];
 
   return (
@@ -113,9 +113,9 @@ const HomePage = () => {
       transition={{ duration: 0.8 }}
     >
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
-        Encuentra tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">Hogar Perfecto test</span>
+        Encuentra tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-400">Hogar Perfecto </span>
       </h1>
-      <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+      <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto">
         Descubre las mejores propiedades inmobiliarias con nuestra plataforma avanzada de búsqueda y gestión.
       </p>
 
@@ -129,7 +129,7 @@ const HomePage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-orange-400 mx-auto mb-2" />
+            <stat.icon className="w-6 h-6 sm:w-8 sm:h-8 text-red-400 mx-auto mb-2" />
             <div className="text-xl sm:text-2xl font-bold text-white">{stat.value}</div>
             <div className="text-white/60 text-xs sm:text-sm">{stat.label}</div>
           </motion.div>

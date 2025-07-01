@@ -6,10 +6,10 @@ import { Users, Award, TrendingUp, Heart, Shield, Star } from 'lucide-react';
 
 const AboutPage = () => {
   const stats = [
-    { icon: TrendingUp, label: 'Propiedades Vendidas', value: '500+', color: 'text-blue-400' },
-    { icon: Award, label: 'Años de Experiencia', value: '15+', color: 'text-green-400' },
-    { icon: Users, label: 'Clientes Satisfechos', value: '1000+', color: 'text-purple-400' },
-    { icon: Star, label: 'Calificación Promedio', value: '4.9/5', color: 'text-yellow-400' }
+    { icon: TrendingUp, label: 'Propiedades Vendidas', value: '60+', color: 'text-blue-400' },
+    { icon: Award, label: 'Años de Experiencia', value: '5+', color: 'text-green-400' },
+    { icon: Users, label: 'Clientes Satisfechos', value: '100+', color: 'text-purple-400' },
+    { icon: Star, label: 'Calificación Promedio', value: '5/5', color: 'text-yellow-400' }
   ];
 
   const values = [
@@ -62,7 +62,7 @@ const AboutPage = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <div className="glass-effect rounded-2xl p-6 sm:p-8">
-            <h2 className="text-2xl sm:text-3xl font-bold /70 mb-6 text-center">
+            <h2 className="text-black/70 sm:text-3xl font-bold /70 mb-6 text-center">
               Nuestra Historia
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">

@@ -38,11 +38,11 @@ const Footer = () => {
   ];
 
   const socialIcons = [
-    { icon: Instagram, link: '#' },
-    { icon: Facebook, link: '#' },
+    { icon: Instagram, link: 'https://www.instagram.com/estudio__rc/' },
+    { icon: Facebook, link: 'https://www.facebook.com/estudioRC.ArqyDesarrollos' },
     { icon: Linkedin, link: '#' },
-    { icon: Twitter, link: '#' },
-    { icon: Youtube, link: '#' }
+    // { icon: Twitter, link: '#' },
+    // { icon: Youtube, link: '#' }
   ];
 
   return (
@@ -92,14 +92,14 @@ const Footer = () => {
             className="text-center"
           >
             <h3 className="text-black font-semibold mb-4">Navegación</h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2 w-max mx-auto">
               {navLinks.map((link) => {
                 const Icon = link.icon;
                 return (
                   <Link
                     key={link.path}
                     to={link.path}
-                    className="flex items-center justify-center space-x-2 text-black/70 hover:text-black transition-colors duration-300"
+                    className="flex items-center justify-start space-x-4 text-black/70 hover:text-black transition-colors duration-300"
                   >
                     <Icon className="w-4 h-4" />
                     <span className="text-sm">{link.label}</span>

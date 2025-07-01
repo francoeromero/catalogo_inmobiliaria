@@ -174,7 +174,7 @@ const SearchFilter = ({ filters, onFilterChange, onSearch }) => {
           className="btn-primary flex items-center space-x-2"
         >
           <Search className="w-5 h-5" />
-          <span>Buscar Propiedades</span>
+          <span>Buscar Propiedades </span>
         </button>
       </div>
     </motion.div>
