@@ -151,17 +151,14 @@ const ContactPage = () => {
               <div className="w-full h-64 sm:h-96 overflow-hidden rounded-xl">
 
 
-                <iframe
-                  title="Ubicación en Google Maps"
-                  src="https://www.youtube.com"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-xl"
-                />
+<a href="https://maps.app.goo.gl/3GKrBMLq1Xg4Ctxr5" target="_blank" rel="noopener noreferrer">
+  <img
+    src="./img/map.jpg"
+    alt="Ubicación en Google Maps"
+    style={{ width: '100%', height: 'auto', borderRadius: '0.75rem' }}
+  />
+</a>
+
               </div>
               <div className="mt-4 text-center">
                 <a href="https://maps.app.goo.gl/3GKrBMLq1Xg4Ctxr5" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline text-sm">
