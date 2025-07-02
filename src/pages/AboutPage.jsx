@@ -68,9 +68,7 @@ const AboutPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-black/80 text-base sm:text-lg leading-relaxed mb-4">
-                  RC PROPIEDADES nació hace más de 15 años con la visión de revolucionar el mercado inmobiliario, 
-                  ofreciendo un servicio personalizado y de calidad excepcional. Desde nuestros humildes comienzos, 
-                  hemos crecido hasta convertirnos en una de las empresas más confiables del sector.
+                  En Estudio RC combinamos más de 30 años de trayectoria en la construcción con más de 5 años de experiencia en la comercialización de inmuebles. Somos un estudio de arquitectura que entiende el valor de cada proyecto, desde su diseño hasta su venta. Acompañamos a nuestros clientes en todo el proceso de venta, desde la evaluación del inmueble, la estrategia comercial, la producción de material visual y técnico, hasta el cierre de la operación. Trabajamos con compromiso, visión técnica y profundo conocimiento del mercado para lograr desarrollos sólidos y operaciones exitosas.
                 </p>
                 <p className="text-black/80 text-base sm:text-lg leading-relaxed">
                   Nuestro compromiso con la excelencia y la satisfacción del cliente nos ha permitido construir 

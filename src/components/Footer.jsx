@@ -33,7 +33,8 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: Mail, label: 'info@rcpropiedades.com' },
-    { icon: Phone, label: '+1 (555) 123-4567' },
+    { icon: Phone, label: '+54 11 5148-7328' },
+    { icon: Phone, label: '+54 11 5376 7216' },
     { icon: MapPin, label: 'Buenos Aires, Argentina' }
   ];
 

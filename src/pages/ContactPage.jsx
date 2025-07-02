@@ -15,9 +15,9 @@ const ContactPage = () => {
   });
 
   const contactInfo = [
-    { icon: Phone, title: 'Teléfono', details: ['+1 (555) 123-4567', '+1 (555) 987-6543'], color: 'text-blue-400' },
-    { icon: Mail, title: 'Email', details: ['info@rcpropiedades.com', 'ventas@rcpropiedades.com'], color: 'text-green-400' },
-    { icon: MapPin, title: 'Dirección', details: ['Av. Principal 123', 'Ciudad, País 12345'], color: 'text-purple-400' },
+    { icon: Phone, title: 'Teléfono', details: ['+54 11 5148-7328', '+54 11 5376 7216'], color: 'text-blue-400' },
+    { icon: Mail, title: 'Email', details: ['info@rcpropiedades.com', 'estudiorc.proyectoyobras@gmail.com '], color: 'text-green-400' },
+    { icon: MapPin, title: 'Dirección', details: ['Dorrego 2486', 'Buenos Aires, Argentina'], color: 'text-purple-400' },
     { icon: Clock, title: 'Horarios', details: ['Lun - Vie: 9:00 AM - 6:00 PM', 'Sáb: 9:00 AM - 2:00 PM'], color: 'text-yellow-400' }
   ];
 
@@ -114,9 +114,32 @@ const ContactPage = () => {
                 <h3 className="text-xl font-semibold text-black/70 mb-4">Síguenos</h3>
                 <p className="text-black/70 mb-4">Mantente al día con las últimas propiedades y noticias del mercado inmobiliario.</p>
                 <div className="flex space-x-3 ">
-                  <button className="btn-secondary flex-1">Facebook</button>
-                  <button className="btn-secondary flex-1">Instagram</button>
-                  <button className="btn-secondary flex-1">LinkedIn</button>
+                  <button className="btn-secondary flex-1">
+                    <a
+                      href="https://www.facebook.com/estudioRC.ArqyDesarrollos"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-secondary flex-1 text-center"
+                    >
+                      Facebook
+                    </a>
+                    </button>
+                  <button className="btn-secondary flex-1"><a
+  href="https://www.instagram.com/estudio__rc/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-secondary flex-1 text-center"
+>
+  Instagram
+</a></button>
+                  <button className="btn-secondary flex-1"><a
+  href="https://www.linkedin.com/in/tu_perfil"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="btn-secondary flex-1 text-center"
+>
+  LinkedIn
+</a></button>
                 </div>
               </div>
             </motion.div>
