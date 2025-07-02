@@ -13,7 +13,8 @@ const sampleProperties = [
     bathrooms: 3,
     area: 280,
     description: "Hermosa casa moderna con acabados de lujo, jardín amplio y piscina. Ubicada en una zona residencial exclusiva con excelente conectividad.",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop&crop=center",
+    acceptsSquareMeters: "Si"
   },
   {
     id: 2,
@@ -26,7 +27,8 @@ const sampleProperties = [
     bathrooms: 2,
     area: 150,
     description: "Espectacular apartamento con vista panorámica al mar, balcón amplio y amenidades de primera clase. Perfecto para vivir o invertir.",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop&crop=center",
+    acceptsSquareMeters: "No"
   },
   {
     id: 3,
@@ -39,7 +41,8 @@ const sampleProperties = [
     bathrooms: 4,
     area: 420,
     description: "Impresionante villa de estilo mediterráneo con piscina infinita, jardines paisajísticos y vistas espectaculares de la ciudad.",
-    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop&crop=center",
+    acceptsSquareMeters: "Si"
   },
   {
     id: 4,
@@ -52,7 +55,8 @@ const sampleProperties = [
     bathrooms: 3,
     area: 200,
     description: "Exclusivo penthouse en el corazón de la ciudad con terraza privada, jacuzzi y vistas de 360 grados. Diseño contemporáneo único.",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop&crop=center",
+    acceptsSquareMeters: "Si"
   },
   {
     id: 5,
@@ -65,7 +69,8 @@ const sampleProperties = [
     bathrooms: 1,
     area: 45,
     description: "Estudio completamente equipado y amueblado, ideal para estudiantes y jóvenes profesionales. Excelente ubicación y precio accesible.",
-    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&h=600&fit=crop&crop=center",
+    acceptsSquareMeters: "Si"
   },
   {
     id: 6,
@@ -78,7 +83,8 @@ const sampleProperties = [
     bathrooms: 2,
     area: 220,
     description: "Perfecta casa familiar con jardín amplio, garage para dos autos y área de juegos. Ideal para familias que buscan tranquilidad.",
-    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&crop=center",
+    acceptsSquareMeters: "Si"
   },
   {
     id: 7,
@@ -91,7 +97,8 @@ const sampleProperties = [
     bathrooms: 2,
     area: 85,
     description: "Moderno apartamento completamente amueblado, perfecto para ejecutivos. Incluye gimnasio, piscina y servicio de conserjería 24/7.",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&h=600&fit=crop&crop=center",
+    acceptsSquareMeters: "Si"
   },
   {
     id: 8,
@@ -104,7 +111,8 @@ const sampleProperties = [
     bathrooms: 4,
     area: 380,
     description: "Espectacular casa de campo con viñedo propio, caballerizas y amplios espacios verdes. Perfecta para escapadas de fin de semana.",
-    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&crop=center"
+    image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop&crop=center",
+    acceptsSquareMeters: "Si"
   }
 ];
 
