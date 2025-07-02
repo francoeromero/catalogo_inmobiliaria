@@ -153,7 +153,7 @@ const ContactPage = () => {
 
 <a href="https://maps.app.goo.gl/3GKrBMLq1Xg4Ctxr5" target="_blank" rel="noopener noreferrer">
   <img
-    src="./img/map.jpg"
+    src="https://github.com/francoeromero/catalogo_inmobiliaria/blob/main/img/map.jpg?raw=true"
     alt="Ubicación en Google Maps"
     style={{ width: '100%', height: 'auto', borderRadius: '0.75rem' }}
   />
