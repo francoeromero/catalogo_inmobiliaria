@@ -192,9 +192,13 @@ const AdminPage = () => {
                   <th className="table-header text-left hidden md:table-cell">Ubicación</th>
                   <th className="table-header text-left">Precio</th>
                   <th className="table-header text-left hidden lg:table-cell">Tipo</th>
+                  
                   <th className="table-header text-left hidden lg:table-cell">Operación</th>
                   <th className="table-header text-left hidden lg:table-cell">Detalles</th>
+                  
+                  <th className="table-header text-center hidden lg:table-cell">Acepta m²</th>
                   <th className="table-header text-center">Acciones</th>
+
                 </tr>
               </thead>
               <tbody>
@@ -230,6 +234,7 @@ const AdminPage = () => {
                           {property.type}
                         </span>
                       </td>
+
                       <td className="table-cell hidden lg:table-cell">
                         <span className={`px-2 py-1 rounded text-sm ${
                           property.operation === 'Venta' 
@@ -239,11 +244,29 @@ const AdminPage = () => {
                           {property.operation}
                         </span>
                       </td>
+
+
+
+
                       <td className="table-cell hidden lg:table-cell">
                         <div className="text-sm text-black/70">
                           {property.bedrooms}h • {property.bathrooms}b • {property.area}m²
                         </div>
                       </td>
+
+
+                          
+                      {/* ACEPTA M2 */}
+                    <td className="table-cell hidden lg:table-cell">
+                      <span className={`px-2 py-1 rounded text-sm ${
+                        property.acceptsSquareMeters === 'Sí'
+                          ? 'bg-green-500/20 text-green-700'
+                          : 'bg-gray-300/40 text-gray-700'
+                      }`}>
+                        {property.acceptsSquareMeters}
+                      </span>
+                    </td>
+
                       <td className="table-cell">
                         <div className="flex items-center justify-center space-x-1 sm:space-x-2">
                           <button
@@ -269,6 +292,9 @@ const AdminPage = () => {
                           </button>
                         </div>
                       </td>
+
+
+
                     </motion.tr>
                   ))
                 ) : (

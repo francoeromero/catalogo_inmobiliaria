@@ -8,7 +8,7 @@ const PropertyForm = ({ property, isOpen, onClose, onSave }) => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     title: '',
-    operationType: 'Venta', // modificacion
+    operation: 'Venta', // modificacion
     location: '',
     price: '',
     type: 'Casa',
@@ -16,13 +16,22 @@ const PropertyForm = ({ property, isOpen, onClose, onSave }) => {
     bathrooms: '',
     area: '',
     description: '',
-    image: ''
+    image: '',
+    acceptsSquareMeters: 'No' // nuevo campo
   });
 
   useEffect(() => {
+    // if (property) {
+    //   setFormData(property);
+    // } 
     if (property) {
-      setFormData(property);
-    } else {
+    setFormData({
+      ...property,
+      acceptsSquareMeters: property.acceptsSquareMeters || 'No'
+    });
+  } 
+
+    else {
       setFormData({
         title: '',
         location: '',
@@ -32,7 +41,8 @@ const PropertyForm = ({ property, isOpen, onClose, onSave }) => {
         bathrooms: '',
         area: '',
         description: '',
-        image: ''
+        image: '',
+        acceptsSquareMeters: 'No'
       });
     }
   }, [property]);
@@ -125,8 +135,8 @@ const PropertyForm = ({ property, isOpen, onClose, onSave }) => {
               Tipo de Operación
             </label>
             <select
-              name="operationType"
-              value={formData.operationType}
+              name="operation"
+              value={formData.operation}
               onChange={handleChange}
               className="form-input"
             >
@@ -220,6 +230,9 @@ const PropertyForm = ({ property, isOpen, onClose, onSave }) => {
               />
             </div>
 
+
+
+
             <div>
               <label className="block text-black/80 text-sm font-medium mb-2">
                 Área (m²)
@@ -234,6 +247,23 @@ const PropertyForm = ({ property, isOpen, onClose, onSave }) => {
                 min="0"
               />
             </div>
+
+
+            <div>
+            <label className="block text-black/80 text-sm font-medium mb-2">
+              El propietario acepta en metros cuadrados?
+            </label>
+            <select
+              name="acceptsSquareMeters"
+              value={formData.acceptsSquareMeters}
+              onChange={handleChange}
+              className="form-input"
+            >
+              <option value="Sí">Sí</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
 
             <div>
               <label className="block text-black/80 text-sm font-medium mb-2">

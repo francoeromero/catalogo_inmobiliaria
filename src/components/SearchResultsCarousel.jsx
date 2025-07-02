@@ -102,12 +102,20 @@ const SearchResultsCarousel = ({ properties, onPropertyClick }) => {
                     <span className="text-sm">{property.location}</span>
                   </div>
 
-                  {property.operation && (
-                    <div className="flex items-center text-black/70 mb-3">
-                      <Tag className="w-4 h-4 mr-1" />
-                      <span className="text-sm font-medium">{property.operation}</span>
-                    </div>
+              {property.operation && (
+                <div className="flex items-center text-black/70 mb-3 gap-2">
+                  <Tag className="w-4 h-4 mr-1" />
+                  <span className="text-sm font-medium">
+                    {property.operation}
+                  </span>
+
+                  {property.acceptsSquareMeters === 'Sí' && (
+                    <span className="text-xs bg-red-100 text-black-800 px-2 py-0.5 rounded">
+                      Acepta m²
+                    </span>
                   )}
+                </div>
+              )}
                   
                   <div className="flex items-center justify-between text-black/80 text-sm">
                     <div className="flex items-center space-x-3">
