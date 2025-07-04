@@ -87,9 +87,17 @@ const ContactPage = () => {
                     </select>
                   </div>
                   <textarea name="message" value={formData.message} onChange={handleInputChange} required rows={5} className="form-input resize-none" placeholder="Cuéntanos cómo podemos ayudarte..." />
-                  <button type="submit" className="btn-primary w-full flex items-center justify-center space-x-2">
-                    <Send className="w-5 h-5" /><span>Enviar Mensaje</span>
+                <a
+                  href="https://wa.me/541151487328"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
+                  <button className="btn-primary w-full flex items-center justify-center space-x-2">
+                    <Send className="w-5 h-5" />
+                    <span>Enviar Mensaje</span>
                   </button>
+                </a>
                 </form>
               </div>
             </motion.div>
@@ -100,7 +108,14 @@ const ContactPage = () => {
                   <MessageCircle className="w-6 h-6 text-blue-400 mr-3" />¿Necesitas Ayuda Inmediata?
                 </h3>
                 <p className="text-black/70 mb-4">Nuestro equipo de atención al cliente está disponible para resolver todas tus dudas sobre propiedades, financiamiento y procesos de compra o alquiler.</p>
-                <button className="btn-primary w-full">Hablar con un Asesor</button>
+
+                <a
+                  href="https://wa.me/541151487328"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="btn-primary w-full">Hablar con un Asesor</button>
+                </a>
               </div>
               <div className="glass-effect rounded-xl p-6">
                 <h3 className="text-xl font-semibold text-black/70 mb-4">Horarios de Atención</h3>

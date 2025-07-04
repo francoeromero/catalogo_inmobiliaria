@@ -151,12 +151,21 @@ const AboutPage = () => {
               Desde la búsqueda inicial hasta la firma del contrato, te acompañamos para que encuentres la propiedad perfecta.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">
-                Explorar Propiedades
-              </button>
-              <button className="btn-secondary">
-                Contactar Asesor
-              </button>
+            <button
+          className="btn-primary"
+          onClick={() => (window.location.href = '/propiedades')}
+        >
+          Explorar Propiedades
+        </button>
+              <a
+                href="https://wa.me/541151487328?text=Hola%2C%20quiero%20consultar%20por%20el%20proyecto%20de%20vivienda."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="btn-secondary">
+                  Contactar Asesor
+                </button>
+              </a>
             </div>
           </div>
         </motion.section>
